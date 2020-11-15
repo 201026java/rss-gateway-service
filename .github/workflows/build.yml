@@ -18,7 +18,7 @@ jobs:
           java-version: 11
       - name: Build with Maven and Sonar
         run: |
-         cd ./$PROJECT_ROOT
+          cd ./$PROJECT_ROOT
           ls
           mvn verify sonar:sonar -Dsonar.projectKey=201026java_$APP_NAME-service -Dsonar.organization=201026java -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN
         env:
