@@ -42,8 +42,7 @@ jobs:
         run: |
           pwd
           ls
-          cd ./PROJECT_ROOT ;we will CD to ./project_root if we have package_root/project_root structure 
-					;note that obtaining the jar artifact is from within the Dockerfile
+          cd ./PROJECT_ROOT
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           docker tag $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG $ECR_REGISTRY/$ECR_REPOSITORY:latest
