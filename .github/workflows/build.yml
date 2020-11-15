@@ -5,7 +5,7 @@ env:
   ECR_REGISTRY: ${{ secrets.ECR_REGISTRY }}
   ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY_PREFIX }}-${{ secrets.APP_NAME }}
   IMAGE_TAG: ${{ github.sha }}
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
   SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
   PROJECT_ROOT: rss-gateway-service
 jobs:
@@ -18,7 +18,7 @@ jobs:
           java-version: 11
       - name: Build with Maven and Sonar
         run: |
-         cd ./$PROJECT_ROOT ;we will CD to ./project_root if we have package_root/project_root structure
+         cd ./$PROJECT_ROOT
           ls
           mvn verify sonar:sonar -Dsonar.projectKey=201026java_$APP_NAME-service -Dsonar.organization=201026java -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN
         env:
