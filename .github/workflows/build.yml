@@ -7,7 +7,7 @@ env:
   IMAGE_TAG: ${{ github.sha }}
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
   SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-	PROJECT_ROOT: rss-gateway-service
+	PROJECT_ROOT: rss-gateway-service #
 jobs:
   sonar_maven_build:
     runs-on: ubuntu-latest
